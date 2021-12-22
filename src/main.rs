@@ -13,9 +13,6 @@ fn main() {
         }
     );
 
-    println!("searching for {}", config.query);
-    println!("In file {}", config.filename);
-
     if let Err(e) = topgrep::run(config) {
         println!("Application error: {}", e);
         process::exit(1);
