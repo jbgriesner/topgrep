@@ -1,10 +1,9 @@
-use std::env;
 use std::process;
-
-use topgrep::Config;
+use structopt::StructOpt;
+use topgrep::{Cli, Config};
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let args = Cli::from_args();
 
     let config = Config::new(&args).unwrap_or_else(
         |err| {
