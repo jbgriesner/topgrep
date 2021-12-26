@@ -8,14 +8,14 @@ pub struct Config {
 }
 
 impl Config {
-    pub fn new(args: &Cli) -> Result<Config, &str> {
+    pub fn new(args: Cli) -> Result<Config, &'static str> {
         if false {
             return Err("not enough arguments");            
         }
         
         Ok(Config{ 
-            filename: args.filepath.clone(),
-            query: args.pattern.clone(), 
+            filename: args.filepath,
+            query: args.pattern, 
             case_sensitive: args.case 
         })
     }
