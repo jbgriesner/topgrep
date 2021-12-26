@@ -16,5 +16,3 @@ pub struct Cli {
     #[structopt(short = "c", long = "case-sensitive")]
     pub case: bool,
 }
-
-

@@ -1,5 +1,5 @@
-use std::fs;
 use std::error::Error;
+use std::fs;
 
 mod config;
 pub use config::Config;
@@ -9,7 +9,7 @@ pub use args::Cli;
 
 mod algo;
 
-pub fn run(config: Config) -> Result<(), Box<dyn Error>> {   
+pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     let contents = fs::read_to_string(config.filename)?;
 
     let results = if config.case_sensitive {
